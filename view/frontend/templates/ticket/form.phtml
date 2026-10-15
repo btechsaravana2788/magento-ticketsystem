@@ -1,0 +1,39 @@
+<?php
+/** @var \CustomerSupport\Ticket\Block\Customer\Ticket\Form $block */
+$ticket = $block->getTicket();
+?>
+<form class="form form-ticket" method="post" action="<?= $block->escapeUrl($block->getSaveUrl()) ?>"
+      data-mage-init='{"validation":{}}'>
+    <?= $block->getBlockHtml('formkey') ?>
+    <input type="hidden" name="ticket_id" value="<?= (int)$ticket->getId() ?>">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $block->escapeHtml($block->getData('page_title')) ?></span></legend>
+        <div class="field subject required">
+            <label class="label" for="ticket-subject"><span><?= $block->escapeHtml(__('Subject')) ?></span></label>
+            <div class="control">
+                <input type="text" id="ticket-subject" name="subject" class="input-text" maxlength="255"
+                       data-validate='{"required":true}'
+                       value="<?= $block->escapeHtmlAttr((string)$ticket->getSubject()) ?>">
+            </div>
+        </div>
+        <div class="field description required">
+            <label class="label" for="ticket-description"><span><?= $block->escapeHtml(__('Description')) ?></span></label>
+            <div class="control">
+                <textarea id="ticket-description" name="description" rows="8"
+                          data-validate='{"required":true}'><?= $block->escapeHtml((string)$ticket->getDescription()) ?></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Save Ticket')) ?></span>
+            </button>
+        </div>
+        <div class="secondary">
+            <a href="<?= $block->escapeUrl($block->getUrl('support/ticket')) ?>">
+                <span><?= $block->escapeHtml(__('Back to Tickets')) ?></span>
+            </a>
+        </div>
+    </div>
+</form>

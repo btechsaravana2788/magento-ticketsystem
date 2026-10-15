@@ -1,0 +1,23 @@
+<?php
+/** @var \CustomerSupport\Ticket\Block\Customer\Ticket\View $block */
+$ticket = $block->getTicket();
+?>
+<div class="block">
+    <div class="block-title"><strong><?= $block->escapeHtml($ticket->getSubject()) ?></strong></div>
+    <div class="block-content">
+        <p><strong><?= $block->escapeHtml(__('Status')) ?>:</strong>
+            <?= $block->escapeHtml(ucwords(str_replace('_', ' ', (string)$ticket->getStatus()))) ?></p>
+        <p><strong><?= $block->escapeHtml(__('Description')) ?>:</strong></p>
+        <div><?= nl2br($block->escapeHtml((string)$ticket->getDescription())) ?></div>
+        <?php if ($ticket->getAdminReply()): ?>
+            <p><strong><?= $block->escapeHtml(__('Support Reply')) ?>:</strong></p>
+            <div><?= nl2br($block->escapeHtml((string)$ticket->getAdminReply())) ?></div>
+        <?php endif; ?>
+        <p><a href="<?= $block->escapeUrl($block->getUrl('support/ticket/edit', ['id' => $ticket->getId()])) ?>">
+                <?= $block->escapeHtml(__('Edit Ticket')) ?>
+            </a></p>
+        <p><a href="<?= $block->escapeUrl($block->getUrl('support/ticket')) ?>">
+                <?= $block->escapeHtml(__('Back to Tickets')) ?>
+            </a></p>
+    </div>
+</div>

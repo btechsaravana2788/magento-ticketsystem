@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CustomerSupport_Ticket::tickets"
+             title="Support Tickets"
+             module="CustomerSupport_Ticket"
+             sortOrder="90"
+             parent="Magento_Backend::content"
+             action="support_ticket/ticket/index"
+             resource="CustomerSupport_Ticket::manage"/>
+    </menu>
+</config>

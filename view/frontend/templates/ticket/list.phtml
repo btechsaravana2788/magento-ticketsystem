@@ -1,0 +1,57 @@
+<?php
+/** @var \CustomerSupport\Ticket\Block\Customer\Ticket\Index $block */
+$tickets = $block->getTickets();
+?>
+<div class="block">
+    <div class="block-title"><strong><?= $block->escapeHtml(__('My Support Tickets')) ?></strong></div>
+    <div class="block-content">
+        <p><a class="action primary" href="<?= $block->escapeUrl($block->getUrl('support/ticket/new')) ?>">
+                <span><?= $block->escapeHtml(__('Create a Ticket')) ?></span>
+            </a></p>
+        <?php if (!$tickets->getSize()): ?>
+            <p><?= $block->escapeHtml(__('You have not created any support tickets.')) ?></p>
+        <?php else: ?>
+            <div class="table-wrapper orders-history">
+                <table class="data table table-order-items history">
+                    <thead>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Ticket')) ?></th>
+                        <th><?= $block->escapeHtml(__('Subject')) ?></th>
+                        <th><?= $block->escapeHtml(__('Status')) ?></th>
+                        <th><?= $block->escapeHtml(__('Created')) ?></th>
+                        <th><?= $block->escapeHtml(__('Actions')) ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($tickets as $ticket): ?>
+                        <tr>
+                            <td><?= (int)$ticket->getId() ?></td>
+                            <td><?= $block->escapeHtml($ticket->getSubject()) ?></td>
+                            <td><?= $block->escapeHtml(ucwords(str_replace('_', ' ', $ticket->getStatus()))) ?></td>
+                            <td><?= $block->escapeHtml($ticket->getCreatedAt()) ?></td>
+                            <td>
+                                <a href="<?= $block->escapeUrl($block->getUrl('support/ticket/view', ['id' => $ticket->getId()])) ?>">
+                                    <?= $block->escapeHtml(__('View')) ?>
+                                </a>
+                                |
+                                <a href="<?= $block->escapeUrl($block->getUrl('support/ticket/edit', ['id' => $ticket->getId()])) ?>">
+                                    <?= $block->escapeHtml(__('Edit')) ?>
+                                </a>
+                                |
+                                <form class="inline" method="post"
+                                      action="<?= $block->escapeUrl($block->getUrl('support/ticket/delete')) ?>">
+                                    <?= $block->getBlockHtml('formkey') ?>
+                                    <input type="hidden" name="id" value="<?= (int)$ticket->getId() ?>">
+                                    <button type="submit" class="action">
+                                        <span><?= $block->escapeHtml(__('Delete')) ?></span>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>

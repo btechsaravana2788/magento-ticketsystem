@@ -1,0 +1,66 @@
+<?php
+/** @var \CustomerSupport\Ticket\Block\Adminhtml\Ticket\Edit $block */
+$ticket = $block->getTicket();
+$statuses = [
+    'open' => __('Open'),
+    'in_progress' => __('In Progress'),
+    'closed' => __('Closed'),
+];
+?>
+<form id="support-ticket-edit-form" method="post"
+      action="<?= $block->escapeUrl($block->getUrl('support_ticket/ticket/save')) ?>">
+    <?= $block->getBlockHtml('formkey') ?>
+    <input type="hidden" name="ticket_id" value="<?= (int)$ticket->getId() ?>">
+    <div class="admin__fieldset-wrapper">
+        <div class="admin__fieldset-wrapper-title">
+            <strong class="title"><?= $block->escapeHtml(__('Ticket #%1', $ticket->getId())) ?></strong>
+        </div>
+        <div class="admin__fieldset">
+            <div class="admin__field">
+                <label class="admin__field-label"><?= $block->escapeHtml(__('Customer ID')) ?></label>
+                <div class="admin__field-control"><?= (int)$ticket->getCustomerId() ?></div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label"><?= $block->escapeHtml(__('Subject')) ?></label>
+                <div class="admin__field-control"><?= $block->escapeHtml($ticket->getSubject()) ?></div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label"><?= $block->escapeHtml(__('Customer Description')) ?></label>
+                <div class="admin__field-control"><?= nl2br($block->escapeHtml((string)$ticket->getDescription())) ?></div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="ticket-status"><?= $block->escapeHtml(__('Status')) ?></label>
+                <div class="admin__field-control">
+                    <select id="ticket-status" name="status" class="admin__control-select">
+                        <?php foreach ($statuses as $value => $label): ?>
+                            <option value="<?= $block->escapeHtmlAttr($value) ?>"
+                                <?= $ticket->getStatus() === $value ? 'selected="selected"' : '' ?>>
+                                <?= $block->escapeHtml($label) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="ticket-reply"><?= $block->escapeHtml(__('Support Reply')) ?></label>
+                <div class="admin__field-control">
+                    <textarea id="ticket-reply" name="admin_reply" rows="8"
+                              class="admin__control-textarea"><?= $block->escapeHtml((string)$ticket->getAdminReply()) ?></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-actions">
+        <button type="submit" class="action-primary"><span><?= $block->escapeHtml(__('Save Ticket')) ?></span></button>
+        <a class="action-secondary" href="<?= $block->escapeUrl($block->getUrl('support_ticket/ticket/index')) ?>">
+            <?= $block->escapeHtml(__('Back to Tickets')) ?>
+        </a>
+    </div>
+</form>
+<form method="post" action="<?= $block->escapeUrl($block->getUrl('support_ticket/ticket/delete')) ?>">
+    <?= $block->getBlockHtml('formkey') ?>
+    <input type="hidden" name="id" value="<?= (int)$ticket->getId() ?>">
+    <button type="submit" class="action-secondary">
+        <span><?= $block->escapeHtml(__('Delete Ticket')) ?></span>
+    </button>
+</form>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Customer support tickets list preview</title>
+  <desc id="desc">Static mockup of a Magento customer account showing a support ticket list with statuses and actions.</desc>
+  <rect width="1440" height="900" fill="#f4f5f7"/>
+  <rect width="1440" height="76" fill="#ffffff"/>
+  <path d="M0 75.5H1440" stroke="#d8dce2"/>
+  <text x="76" y="48" fill="#24282d" font-family="Arial,sans-serif" font-size="24" font-weight="700">YOUR STORE</text>
+  <text x="1010" y="46" fill="#555d66" font-family="Arial,sans-serif" font-size="15">Welcome, Alex Morgan</text>
+  <text x="1283" y="46" fill="#555d66" font-family="Arial,sans-serif" font-size="15">My Account</text>
+  <text x="82" y="133" fill="#6b737d" font-family="Arial,sans-serif" font-size="14">Home  /  My Account</text>
+  <text x="82" y="193" fill="#24282d" font-family="Arial,sans-serif" font-size="34" font-weight="700">My Account</text>
+  <rect x="82" y="225" width="278" height="590" rx="5" fill="#ffffff" stroke="#e1e4e8"/>
+  <text x="110" y="273" fill="#252a30" font-family="Arial,sans-serif" font-size="17" font-weight="700">MY ACCOUNT</text>
+  <text x="110" y="326" fill="#5d6570" font-family="Arial,sans-serif" font-size="16">Account Dashboard</text>
+  <text x="110" y="374" fill="#5d6570" font-family="Arial,sans-serif" font-size="16">Account Information</text>
+  <text x="110" y="422" fill="#5d6570" font-family="Arial,sans-serif" font-size="16">Address Book</text>
+  <text x="110" y="470" fill="#5d6570" font-family="Arial,sans-serif" font-size="16">My Orders</text>
+  <rect x="96" y="490" width="250" height="48" rx="4" fill="#f2f7fb"/>
+  <rect x="96" y="490" width="4" height="48" rx="2" fill="#1979c3"/>
+  <text x="110" y="520" fill="#1979c3" font-family="Arial,sans-serif" font-size="16" font-weight="700">Support Tickets</text>
+  <rect x="390" y="225" width="970" height="590" rx="5" fill="#ffffff" stroke="#e1e4e8"/>
+  <text x="430" y="280" fill="#252a30" font-family="Arial,sans-serif" font-size="26" font-weight="700">My Support Tickets</text>
+  <text x="430" y="312" fill="#737b84" font-family="Arial,sans-serif" font-size="15">Review and manage your customer support requests.</text>
+  <rect x="1126" y="249" width="194" height="46" rx="4" fill="#1979c3"/>
+  <text x="1160" y="278" fill="#ffffff" font-family="Arial,sans-serif" font-size="15" font-weight="700">+  Create a Ticket</text>
+  <path d="M430 345H1320" stroke="#e3e6e9"/>
+  <rect x="430" y="365" width="890" height="46" fill="#f7f8fa"/>
+  <text x="449" y="394" fill="#535b64" font-family="Arial,sans-serif" font-size="14" font-weight="700">TICKET</text>
+  <text x="555" y="394" fill="#535b64" font-family="Arial,sans-serif" font-size="14" font-weight="700">SUBJECT</text>
+  <text x="876" y="394" fill="#535b64" font-family="Arial,sans-serif" font-size="14" font-weight="700">STATUS</text>
+  <text x="1030" y="394" fill="#535b64" font-family="Arial,sans-serif" font-size="14" font-weight="700">CREATED</text>
+  <text x="1200" y="394" fill="#535b64" font-family="Arial,sans-serif" font-size="14" font-weight="700">ACTIONS</text>
+  <path d="M430 411H1320M430 484H1320M430 557H1320M430 630H1320" stroke="#e9ebee"/>
+  <text x="449" y="455" fill="#3e454d" font-family="Arial,sans-serif" font-size="15">#1042</text>
+  <text x="555" y="455" fill="#3e454d" font-family="Arial,sans-serif" font-size="15">Order delivery update</text>
+  <rect x="864" y="433" width="93" height="27" rx="14" fill="#fff3d6"/>
+  <text x="882" y="452" fill="#805a00" font-family="Arial,sans-serif" font-size="13">In Progress</text>
+  <text x="1030" y="455" fill="#5e6670" font-family="Arial,sans-serif" font-size="14">Oct 12, 2026</text>
+  <text x="1198" y="455" fill="#1979c3" font-family="Arial,sans-serif" font-size="14">View  ·  Edit  ·  Delete</text>
+  <text x="449" y="528" fill="#3e454d" font-family="Arial,sans-serif" font-size="15">#1038</text>
+  <text x="555" y="528" fill="#3e454d" font-family="Arial,sans-serif" font-size="15">Question about a product</text>
+  <rect x="864" y="506" width="67" height="27" rx="14" fill="#e5f4e8"/>
+  <text x="883" y="525" fill="#276738" font-family="Arial,sans-serif" font-size="13">Open</text>
+  <text x="1030" y="528" fill="#5e6670" font-family="Arial,sans-serif" font-size="14">Oct 09, 2026</text>
+  <text x="1198" y="528" fill="#1979c3" font-family="Arial,sans-serif" font-size="14">View  ·  Edit  ·  Delete</text>
+  <text x="449" y="601" fill="#3e454d" font-family="Arial,sans-serif" font-size="15">#1021</text>
+  <text x="555" y="601" fill="#3e454d" font-family="Arial,sans-serif" font-size="15">Return request</text>
+  <rect x="864" y="579" width="71" height="27" rx="14" fill="#edf0f3"/>
+  <text x="882" y="598" fill="#59616a" font-family="Arial,sans-serif" font-size="13">Closed</text>
+  <text x="1030" y="601" fill="#5e6670" font-family="Arial,sans-serif" font-size="14">Sep 28, 2026</text>
+  <text x="1198" y="601" fill="#1979c3" font-family="Arial,sans-serif" font-size="14">View  ·  Edit  ·  Delete</text>
+  <text x="430" y="691" fill="#737b84" font-family="Arial,sans-serif" font-size="14">Showing 3 support tickets</text>
+  <text x="82" y="862" fill="#8b929a" font-family="Arial,sans-serif" font-size="13">STATIC UI PREVIEW · NOT CAPTURED FROM A RUNNING MAGENTO STORE</text>
+</svg>
